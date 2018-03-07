@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <title>Class 与 Style 绑定 - 绑定 HTML Class</title>
+</head>
+<body>
+  <div id="vue">
+      <div :class="{ active: isActive }">对象语法-普通</div>   
+      <div class="static" :class="{ active: isActive, 'text-danger': hasError }">对象语法-混合</div>
+      <div :class="classObject">对象语法-封装对象</div>
+      <div :class="classObject2">对象语法-计算属性</div>
+      <br/>
+      <div :class="[activeClass, errorClass]">数组语法</div>
+      <div :class="[isActive ? activeClass : '', errorClass]">数组语法-三元</div>
+      <div :class="[{ active: isActive }, errorClass]">数组语法-对象语法</div>
+ </div>   
+  
+
+  <div id="bt">
+    <button @click="change">戳我</button>
+  </div>
+  
+</body>
+  <script>
+    let vue = new Vue({
+      el: '#vue',
+      data: {
+        isActive: true,
+        hasError: false,
+        error: null,
+        classObject: {
+          active: true,
+          'text-danger': false
+        },
+        activeClass: 'active',
+        errorClass: 'text-danger'
+      },
+      computed: {
+        classObject2: function () {
+          return {
+            active: this.isActive && !this.error,
+            'text-danger': this.error && this.error.type === 'fatal'
+          }
+        }
+      }
+    });
+    
+    var bt = new Vue({
+      el: '#bt',
+      // 在 `methods` 对象中定义方法
+      methods: {
+        change: () => {
+          if (vue.hasError === false) {
+            vue.hasError = true;
+            vue.error = {
+              msg: '我错了',
+              type: 'fatal'
+            };
+          } else {
+            vue.hasError = false
+            vue.error = null;
+          }
+        },
+      },
+      
+    });
+    
+  </script>
+</html>

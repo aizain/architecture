@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+
+    <view class="page-wrap">
+      <scroll-view class="chat-container" 
+        scroll-y 
+        scroll-into-view="{{lastMessageId}}" 
+        scroll-top="9999999999">
+          <view wx:for="{{messages}}" 
+            wx:for-item="message" 
+            wx:key="id" 
+            id="{{message.id}}" 
+            class="message {{message.type}}">
+              <view class="user-message {{message.isMe ? 'me' : 'other'}}">
+                  <image class="avatar" src="{{message.user.avatarUrl}}" mode="aspectFill"></image>
+                  <view class="text">
+                      <view class="nickname">{{message.user.nickName}}</view>
+                      <view class="content">{{message.content}}</view>
+                  </view>
+              </view>
+          </view>
+      </scroll-view>
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" 
+                  placeholder="等待输入..." 
+                  value="{{inputContent}}"
+                  bindchange="changeInputContent"  />
+            </view>
+        </view>
+        <button class="weui-btn" type="primary" bindtap="sendMessage">发送</button>
+      </view>
+    </view>
+  </view>
+</view>

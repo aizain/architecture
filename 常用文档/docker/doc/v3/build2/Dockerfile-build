@@ -1,0 +1,14 @@
+FROM redis:latest
+
+LABEL "com.gyzh.zain.author"="Zain"
+LABEL "com.gyzh.zain.label-with-empty-value"=""
+
+ARG datafile
+
+RUN mkdir -p $datafile \
+  && chown redis:redis $datafile
+WORKDIR $datafile
+RUN echo "Redis data file: $datafile"
+
+EXPOSE 6379
+CMD ["redis-server"]

@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" 
+      open-type="getUserInfo" 
+      bindgetuserinfo="getUserInfo"> 获取头像昵称     </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" 
+        open-type="getUserInfo" 
+        class="userinfo-avatar" 
+        src="{{userInfo.avatarUrl}}" 
+        background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="page__bd page__bd_spacing">
+    <button bindtap="bindViewTap" 
+      class="weui-btn" 
+      type="primary">登录
+    </button>   
+    <button bindtap="bindViewTap" 
+      class="weui-btn" 
+      type="default">注册
+    </button>  
+  </view>
+
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+      <navigator url="" class="weui-footer__link">
+        AiZain 首页
+      </navigator>
+    </view>
+    <view class="weui-footer__text">
+      Copyright © 2017-2018 aizain.com
+    </view>
+  </view>
+
+</view>

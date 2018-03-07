@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <title>组件-data必须是函数</title>
+</head>
+<body>
+
+  <div id="example">
+    <p>ex</p>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+  </div>
+  
+  <div id="bt">
+    <button @click="change">戳我</button>
+  </div>
+  
+</body>
+  <script>
+    let data = { counter: 0 }
+
+    // 注册
+    Vue.component('simple-counter', {
+      template: '<button @click="counter += 1">{{ counter }}</button>',
+      data: function () {
+      return data
+    }
+    });
+
+    let vue = new Vue({
+      el: '#example'
+    });
+    
+    let bt = new Vue({
+      el: '#bt',
+      // 在 `methods` 对象中定义方法
+      methods: {
+        change: () => {
+        },
+      },
+      
+    });
+    
+  </script>
+</html>

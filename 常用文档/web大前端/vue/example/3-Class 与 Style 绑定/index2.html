@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <title>Class 与 Style 绑定 - </title>
+</head>
+<body>
+  <div id="vue">
+ </div>   
+  
+
+  <div id="bt">
+    <button @click="change">戳我</button>
+  </div>
+  
+</body>
+  <script>
+    
+    var bt = new Vue({
+      el: '#bt',
+      // 在 `methods` 对象中定义方法
+      methods: {
+        change: () => {
+        },
+      },
+      
+    });
+    
+  </script>
+</html>

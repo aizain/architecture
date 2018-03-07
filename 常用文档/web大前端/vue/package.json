@@ -1,0 +1,13 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "模拟服务器",
+  "main": "app.js",
+  "scripts": {},
+  "author": "zain",
+  "license": "none",
+  "dependencies": {
+    "express": "^4.16.2",
+    "vue": "^2.5.2"
+  }
+}

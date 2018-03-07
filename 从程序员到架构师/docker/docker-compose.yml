@@ -1,0 +1,10 @@
+
+mysql_5888:
+  restart: always
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=zain5888
+  volumes:
+    - /lg-data/data/mysql_5888:/var/lib/mysql
+  ports:
+    - "5888:3306"

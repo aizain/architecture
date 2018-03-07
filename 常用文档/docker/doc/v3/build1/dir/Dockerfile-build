@@ -1,0 +1,6 @@
+FROM redis:latest
+RUN mkdir -p /data/redis \
+  && chown redis:redis /data/redis
+WORKDIR /data/redis
+EXPOSE 6379
+CMD ["redis-server"]

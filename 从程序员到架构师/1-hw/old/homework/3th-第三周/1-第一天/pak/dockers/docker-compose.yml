@@ -1,0 +1,12 @@
+
+
+postgres_5444:
+  restart: always
+  image: postgres
+  environment: 
+    - POSTGRES_PASSWORD=zain5444
+    - PGDATA=/data/postgres/
+  volumes:
+    - /lg-data/data/pg_5444:/data/postgres
+  ports:
+    - "5444:5432"

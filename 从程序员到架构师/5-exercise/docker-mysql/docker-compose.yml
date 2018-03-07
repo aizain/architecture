@@ -1,0 +1,19 @@
+mysql_19970:
+  restart: always
+  build: ./mysql001
+  environment:
+    - MYSQL_ROOT_PASSWORD=zain19970
+  volumes:
+    - /lg-data/data/mysql_19970:/var/lib/mysql
+  ports:
+    - "19970:3306"
+
+mysql_19971:
+  restart: always
+  build: ./mysql002
+  environment:
+    - MYSQL_ROOT_PASSWORD=zain19971
+  volumes:
+    - /lg-data/data/mysql_19971:/var/lib/mysql
+  ports:
+    - "19971:3306"

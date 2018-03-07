@@ -1,0 +1,19 @@
+
+version: '3.3'
+services:
+  redis:
+    build:
+      context: . # build的上下文路径
+      dockerfile: Dockerfile-redis # Dockerfile文件的路径
+      args:
+        - datafile=/data/redis
+      labels: # 设置3.3版本可支持
+        - "com.gyzh.zain.author=Zain"
+        - "com.gyzh.zain.label-with-empty-value"
+    image: myredis:1.0.2 # 将本次构建内容打包成镜像
+    command: ["redis-server", "/data/redis/redis.conf"]
+    configs:
+      - my_config
+configs:
+  my_config:
+    file: ./redis_16379.conf

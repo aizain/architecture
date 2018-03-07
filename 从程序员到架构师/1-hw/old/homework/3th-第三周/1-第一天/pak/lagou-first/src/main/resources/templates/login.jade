@@ -1,0 +1,33 @@
+doctype html
+- var cs = 'UTF-8'
+
+
+html
+head
+    meta(charset='#{cs}')
+    title= "Login"
+body
+    h1 欢迎使用onzain
+    p 登录/注册
+    br
+
+div
+    form(action='/loginhandler',method='post')
+        div(data-role='fieldcontain')
+            label(for='in_account') 账户名
+            input(id='in_account', type='text', value='',name='in_account')
+        div#in_passworddiv(data-role='fieldcontain')
+            label(for='in_password') 密码
+            input(id='in_password',type='password',value='',placeholder='',name='in_password')
+        div(data-role='fieldcontain')
+            input(type='submit', value='登录',data-transition='fade', data-theme='c')
+div
+    form(action='/loguphandler',method='post')
+        div(data-role='fieldcontain')
+            label(for='up_account') 账户名
+            input(id='up_account', type='text', value='',name='up_account')
+        div#up_passworddiv(data-role='fieldcontain')
+            label(for='up_password') 密码
+            input(id='up_password',type='password',value='',placeholder='',name='up_password')
+        div(data-role='fieldcontain')
+            input(type='submit', value='注册',data-transition='fade', data-theme='c')

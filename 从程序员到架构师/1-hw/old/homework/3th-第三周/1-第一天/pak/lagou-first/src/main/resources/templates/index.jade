@@ -1,0 +1,10 @@
+doctype html
+- var cs = 'UTF-8'
+
+
+html
+head
+    meta(charset='#{cs}')
+    title="首页"
+body
+    p= "欢迎" + context.get('user')

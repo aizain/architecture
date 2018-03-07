@@ -1,0 +1,68 @@
+*.DS_Store
+*.zip
+.gradle
+.idea
+.settings
+out
+build
+gradle
+gradlew*
+.project
+.classpath
+bin
+node_modules
+cert
+
+
+node_modules/
+**/node_modules/
+bower_component/
+**/bower_component/
+bower_components/
+**/bower_components/
+.sass-cache/
+**/.sass-cache/
+.codekit-cache/
+**/.codekit-cache/
+dist/
+dist
+log/
+logs/
+**/log/
+**/logs/
+temp/
+**/temp/
+cache/
+**/cache/
+build/temp
+build/temp/
+npm-debug.log
+yarn-error.log
+
+# MacOSX
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# audio
+*.wav
+
+# npm
+package-lock.json
+
+# vscode
+
+# webstorm
+.idea
+
+# mocha
+mochawesome-report
+
+# certs
+certs
+
+# dfsfile
+dfsfile

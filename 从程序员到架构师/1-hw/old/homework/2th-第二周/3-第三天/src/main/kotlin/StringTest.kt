@@ -1,0 +1,5 @@
+class StringTest () {
+    fun template () {
+
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "vue-admin",
+  "homepage": "https://github.com/vue-bulma/vue-admin",
+  "version": "0.1.12",
+  "_release": "0.1.12",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.12",
+    "commit": "4cf2730888ae0847899751fb54bc192c92d5aa1f"
+  },
+  "_source": "https://github.com/vue-bulma/vue-admin.git",
+  "_target": "^0.1.12",
+  "_originalSource": "https://github.com/vue-bulma/vue-admin.git",
+  "_direct": true
+}

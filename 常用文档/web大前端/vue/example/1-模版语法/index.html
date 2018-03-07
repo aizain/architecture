@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <title>模版语法</title>
+</head>
+<body>
+  <div id="vue">
+    <span v-once>这个将不会改变: {{ msg }}</span><br/>
+    <span>Message: {{ msg }}</span><br/>
+    <span>Message: {{ msg.split('').reverse().join('') }}</span><br/>
+    <span v-if="seen">现在你看到我了</span><br/>
+    <div v-html="rawHtml"></div>
+
+    <span v-bind:name="msg"></span><br/>
+    <span :name="msg"></span><br/>
+  </div>
+
+  <div id="bt">
+    <button v-on:click="change">戳我</button>
+    <button @click="change">戳我</button>
+  </div>
+    
+  
+</body>
+  <script>
+    let vue = new Vue({
+      el: '#vue',
+      data: {
+        msg: 'say something 例如你好',
+        rawHtml: '<h2>听说这个不要随便用，容易导致 XSS 攻击</h2>',
+        seen: true
+      }
+    });
+    
+    var bt = new Vue({
+      el: '#bt',
+      data: {
+        name: 'Vue.js'
+      },
+      // 在 `methods` 对象中定义方法
+      methods: {
+        change: () => {
+          vue.msg = '呵呵你好';
+          vue.rawHtml = '<h1>戳我也没用</h1>';
+          vue.seen = false;
+        }
+      }
+    })
+    
+  </script>
+</html>

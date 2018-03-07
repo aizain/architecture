@@ -1,0 +1,9 @@
+
+version: '3'
+services:
+  redis:
+    build:
+      context: ./dir # build的上下文路径
+      dockerfile: Dockerfile-build # Dockerfile文件的路径
+      # dockerfile: ./dir/Dockerfile-build # 其他写法
+    image: myredis:1.0.0 # 将本次构建内容打包成镜像
